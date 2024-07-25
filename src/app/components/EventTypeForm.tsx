@@ -6,7 +6,6 @@ import {BookingTimes, WeekdayName} from "@/libs/types";
 import {IEventType} from "@/models/EventType";
 import axios from "axios";
 import {clsx} from "clsx";
-import {Trash} from "lucide-react";
 import {useRouter} from "next/navigation";
 import {FormEvent, useState} from "react";
 
@@ -89,7 +88,9 @@ export default function EventTypeForm({
             {weekdaysNames.map(day => {
               const active = bookingTimes?.[day]?.active;
               return (
-                <div className="grid grid-cols-2 gap-2 items-center">
+                <div
+                  key={day}
+                  className="grid grid-cols-2 gap-2 items-center">
                   <label className="flex gap-1 !mb-0 !p-0">
                     <input
                       type="checkbox"

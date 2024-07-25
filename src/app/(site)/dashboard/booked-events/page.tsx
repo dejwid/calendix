@@ -20,7 +20,9 @@ export default async function DashboardPage() {
           const eventTypeDoc = eventTypeDocs
             .find(etd => (etd._id as string).toString() === booking.eventTypeId);
           return (
-            <div className="p-4 border-b bg-gray-100">
+            <div
+              key={booking._id}
+              className="p-4 border-b bg-gray-100">
               <h3 className="text-lg font-semibold text-gray-700">
                 {eventTypeDoc?.title}
               </h3>
