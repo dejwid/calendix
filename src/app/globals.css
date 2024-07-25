@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cool-underline{
+    position: relative;
+}
+.cool-underline::after{
+    content: '';
+    height: 10px;
+    background-color: #DC008366;
+    display: block;
+    position: absolute;
+    left: -8px;
+    width: 0;
+    bottom: 10px;
+    z-index: -1;
+    transform: skew(-21deg);
+    transition: all 0.5s ease-in-out;
+}
+.cool-underline.show-underline::after{
+    width: calc(100% + 16px);
+}
+
+form input[type="text"], form input[type="email"], form input[type="number"], form select, form textarea{
+    @apply border rounded-md;
+}
+form input[type="text"], form input[type="email"], form input[type="number"], form textarea{
+    @apply w-full block p-2;
+}
+form label{
+    @apply mb-2 block p-1;
+}
+form label span, span.label{
+    @apply text-gray-600 text-xs font-bold uppercase;
+}
+.btn-gray{
+    @apply inline-flex gap-1 items-center bg-gray-200 rounded-full px-4 py-2;
+}
+.btn-blue{
+    @apply inline-flex gap-1 items-center bg-blue-600 text-white rounded-full px-4 py-2;
+}
+.btn-red{
+    @apply inline-flex gap-1 items-center bg-red-600 text-white rounded-full px-4 py-2;
+}
